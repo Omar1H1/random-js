@@ -16,6 +16,9 @@ body {
     height: 80px;
     width: 80px;
     background: yellow;
+    text-align: center;
+    justify-content: center;
+    text-justify: auto;
 }
 
 .box.active {
