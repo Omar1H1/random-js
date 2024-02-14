@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.box  {
+    height: 80px;
+    width: 80px;
+    background: yellow;
+}
+
+.box.active {
+    background: darkblue;
+}
