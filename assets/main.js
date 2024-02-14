@@ -9,21 +9,13 @@ toggle.addEventListener("click", () => {
     });
 });
 
-function handleClick(forword) {
-    let currentActiveIndex = Array.from(box).findIndex(element => element.classList.contains("active"));
-    if(forword) {
-        if (currentActiveIndex !== -1) {
-            box[currentActiveIndex].classList.remove("active");
-            let prevIndex = (currentActiveIndex !== 0) ? currentActiveIndex - 1 : box.length - 1;
-            box[prevIndex].classList.add("active");
-        }
-    }
-    else {
-        if (currentActiveIndex !== -1) {
-            box[currentActiveIndex].classList.remove("active");
-            let nextIndex = (currentActiveIndex !== box.length - 1) ? currentActiveIndex + 1 : 0;
-            box[nextIndex].classList.add("active");
-        }
+function handleClick(forward) {
+    let currentActiveIndex = Array.from(box).findIndex(element => element.classList.contains("active"));    
+    if (currentActiveIndex !== -1) {
+        box[currentActiveIndex].classList.remove("active");
+
+        let nextIndex = (forward) ? (currentActiveIndex + 1) % box.length : (currentActiveIndex - 1 + box.length) % box.length;
+        box[nextIndex].classList.add("active");
     }
 
 }
